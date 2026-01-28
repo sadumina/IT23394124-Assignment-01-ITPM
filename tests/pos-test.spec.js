@@ -144,9 +144,10 @@ test('Pos_Fun_0013: English abbreviations and short forms ', async ({ page }) =>
   const singlishInput = page.getByRole('textbox', {
     name: 'Input Your Singlish Text Here.'
   });
-  await singlishInput.fill('mchan mage NIC eka nathi vela eka hadgnna ID office ekata yanna ona.');
-  await expect(page.getByText('මචං මගේ NIC එක නැති වෙලා එක හදගන්න ID office එකට යන්න ඔන.')).toBeVisible();
-}  );
+  await singlishInput.fill('machan NIC eka nathi vela eka hadhagnna ID office ekata yanna ona.');
+  await expect(page.getByText('මචන් NIC එක නති වෙල එක හදග්න්න ID office එකට යන්න ඔන.')).toBeVisible();
+});
+
 
 //Test Case: Pos_Fun_0014//
 test('Pos_Fun_0014:  Tense variations(Past)', async ({ page }) => {
@@ -217,3 +218,4 @@ test('Pos_Fun_0020: Currency, time formats, dates, and units of measurement ', a
   await singlishInput.fill('machan me pothe 150 pages vage thiyenvaa');
   await expect(page.getByText('මචන් මෙ පොතෙ 150 pages වගෙ තියෙන්ව')).toBeVisible();
 } );
+
