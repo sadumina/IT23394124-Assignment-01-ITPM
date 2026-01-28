@@ -28,3 +28,4 @@ test('Neg_Fun_0002: Translate a polite request', async ({ page }) => {
   await expect(page.getByText('මං අද ලෙක්චර්ස් යනවා ඔයා එනවද මචං')).toBeVisible();
 });
 
+//the reason for the above test case is to ensure that the translation system can accurately translate polite requests from Singlish to Sinhala, maintaining the intended tone and meaning.

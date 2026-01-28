@@ -27,3 +27,11 @@ test('Pos_Fun_0002: Translate a common farewell phrase', async ({ page }) => {
 //Test Case: Pos_Fun_0003//
 
 
+test('Pos_Fun_0003: Translate a question about well-being', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', { 
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('aayuboovan!');
+  await expect(page.getByText('ආයුබෝවන්!')).toBeVisible();
+} );  
