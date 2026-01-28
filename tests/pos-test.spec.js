@@ -57,3 +57,25 @@ test('Pos_Fun_0005: Translate a polite request', async ({ page }) => {
   await singlishInput.fill('mama heta naha mata notes tika send karanna puluvandha?');
   await expect(page.getByText('මම හෙට naha මට notes ටික send කරන්න පුලුවන්ද?')).toBeVisible();
 } );
+
+//Test Case: Pos_Fun_0006//
+
+test('Pos_Fun_0006: Translate a sentence about Help', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {           
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('oyaata mata udhav karanna puluvandha?');
+  await expect(page.getByText('ඔයාට මට උදව් කරන්න පුලුවන්ද?')).toBeVisible();
+} );
+
+//Test Case: Pos_Fun_0007//
+
+test('Pos_Fun_0007: Translate a sentence about daily routine', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {     
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('oyaa adha gym ekata giyadha?');
+  await expect(page.getByText('ඔයා අද gym එකට ගියද?')).toBeVisible();
+} );
