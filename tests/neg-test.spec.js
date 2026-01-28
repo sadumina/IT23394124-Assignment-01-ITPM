@@ -98,3 +98,18 @@ test('Neg_Fun_0008: Sentences containing places and common English words that sh
   await singlishInput.fill('api podi kale school giye sisu sariye');
   await expect(page.getByText('අපි පොඩි කාලේ school ගියේ සිසු සරියේ')).toBeVisible();
 } );
+
+
+//Test Case: Neg_Fun_0009//
+
+test('Neg_Fun_0009: English abbreviations and short forms ', async ({ page }) => {  
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('mchan mage NIC eka nathi vela eka hadgnna ID office ekata yanna ona.');
+  await expect(page.getByText('මචං මගේ NIC එක නැති වෙලා එක හදගන්න ID office එකට යන්න ඔන.')).toBeVisible();
+}  );
+
+//actual output should be "ම්චන් mage NIC එක නති වෙල එක හඩ්ග්න්න ID office එකට යන්න ඔන."
+
