@@ -219,3 +219,12 @@ test('Pos_Fun_0020: Currency, time formats, dates, and units of measurement ', a
   await expect(page.getByText('මචන් මෙ පොතෙ 150 pages වගෙ තියෙන්ව')).toBeVisible();
 } );
 
+//Test Case: Pos_Fun_0021//
+test('Pos_Fun_0021: Translate a sentence with negation', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', { 
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('kavadhaavath dhemapiyanghe hitha ridhdhanna epaa');
+  await expect(page.getByText('කවදාවත් දෙමපියන්ග්හෙ හිත රිද්දන්න එපා')).toBeVisible();
+} );
