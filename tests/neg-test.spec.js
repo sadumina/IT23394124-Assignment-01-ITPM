@@ -87,3 +87,14 @@ test('Neg_Fun_0007: Translate a sentence about making plans', async ({ page }) =
   await singlishInput.fill('subma subha aluth avurudhdhak wewa');
   await expect(page.getByText('සුභම සුභ අලුත් අවුරුද්දක් වේවා')).toBeVisible();
 }  );
+
+//Test Case: Neg_Fun_0008//
+
+test('Neg_Fun_0008: Sentences containing places and common English words that should remain as they are ', async ({ page }) => {  
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('api podi kale school giye sisu sariye');
+  await expect(page.getByText('අපි පොඩි කාලේ school ගියේ සිසු සරියේ')).toBeVisible();
+} );

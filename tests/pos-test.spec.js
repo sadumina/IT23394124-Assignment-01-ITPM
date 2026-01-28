@@ -125,3 +125,6 @@ test('Pos_Fun_0011: Translate a sentence about making plans', async ({ page }) =
   await singlishInput.fill('Good morning mage name eka sadumina mn 3rd year student kenek mage home town eka bandarawela mn karanne IT degree ekak . mata me sem eke assignment ekak thiyenwa eka tiynne playwright eken test cases test krnna man kalin igen gen nh eth dan eka igen ganna gamn eka maru .mn hithenwa me assignment ekt mata hodha mark ekak thiyeyi kiyala');
   await expect(page.getByText('Good morning mage name එක සඩුමින ම්න් 3rd year student කෙනෙක් mage home town එක bandarawela ම්න් කරන්නේ IT degree එකක් . මට මෙ සෙම් eke assignment එකක් තියෙනwඅ එක ටිය්න්නෙ playwright එකෙන් test cases test ක්‍රන්න man කලින් ඉගෙන් ගෙන් න්හ් එත් ඩන් එක ඉගෙන් ගන්න ගම්න් එක මරු .ම්න් හිතෙනwඅ මෙ assignment එක්ට් මට හොද mark එකක් තියෙයි කියල')).toBeVisible();
 } );
+
+//Test Case: Pos_Fun_0012//
+
