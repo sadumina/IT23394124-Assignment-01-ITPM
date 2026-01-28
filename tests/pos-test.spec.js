@@ -207,3 +207,13 @@ test('Pos_Fun_0019: Currency, time formats, dates, and units of measurement', as
   await singlishInput.fill('amme mata 3pm  class ekata yanna thiyenva mata mathak karanna');
   await expect(page.getByText('අම්මෙ මට 3pm  class එකට යන්න තියෙන්ව මට මතක් කරන්න')).toBeVisible();
 } );
+
+//Test Case: Pos_Fun_0020//
+test('Pos_Fun_0020: Currency, time formats, dates, and units of measurement ', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('machan me pothe 150 pages vage thiyenvaa');
+  await expect(page.getByText('මචන් මෙ පොතෙ 150 pages වගෙ තියෙන්ව')).toBeVisible();
+} );
