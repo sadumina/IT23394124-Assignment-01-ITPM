@@ -82,6 +82,14 @@ test('Pos_Fun_0007: Translate a sentence about daily routine', async ({ page }) 
 
 //Test Case: Pos_Fun_0008//
 
+test('Pos_Fun_0008: Translate a sentence about studying', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('heta mata exam . oyata  exam dh ?');
+  await expect(page.getByText('හෙට මට exam . ඔයට exam ද් ?')).toBeVisible();
+} );
 
 
 //Test Case: Pos_Fun_0009//
