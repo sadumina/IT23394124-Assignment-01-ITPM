@@ -94,3 +94,11 @@ test('Pos_Fun_0008: Translate a sentence about studying', async ({ page }) => {
 
 //Test Case: Pos_Fun_0009//
 
+test('Pos_Fun_0009: Translate a sentence about education', async ({ page }) => {  
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('mama Linkedin account ekak hadhanava.');
+  await expect(page.getByText('මම Linkedin account එකක් හදනව.')).toBeVisible();
+} );
