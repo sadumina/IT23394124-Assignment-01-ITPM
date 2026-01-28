@@ -248,3 +248,13 @@ test('Pos_Fun_0023: Translate a paragraph', async ({ page }) => {
   await singlishInput.fill('mama dhavase vedi time ekak use karanne technology ekata IT undergraduate kenek vidiyata mata oni me loketh ekka issrahatm yanna ekata technology eka thama godakma onii venne');
   await expect(page.getByText('මම දවසෙ වෙඩි time එකක් use කරන්නේ technology එකට IT undergraduate කෙනෙක් විඩියට මට ඔනි මෙ ලොකෙත් එක්ක ඉස්ස්‍රහට්ම් යන්න එකට technology එක තම ගොඩක්ම ඔනී වෙන්නෙ')).toBeVisible();
 } );
+
+//Test Case: Pos_Fun_0024//
+test('Pos_Fun_0024: Slang and colloquial phrasing ', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('machan uba nam vaddaa supiri !!');
+  await expect(page.getByText('මචන් උබ නම් වඩ්ඩා සුපිරි !!')).toBeVisible();
+} );
