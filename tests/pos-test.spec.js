@@ -8,9 +8,9 @@ test('Pos_Fun_0001: Translate a simple greeting question', async ({ page }) => {
   const singlishInput = page.getByRole('textbox', {
     name: 'Input Your Singlish Text Here.'
   });
-  await singlishInput.fill('oyaata kohomadha?');
+  await singlishInput.fill('Machan moko venne hodhin innavadha?');
 
-  await expect(page.getByText('ඔයාට කොහොමද?')).toBeVisible();
+  await expect(page.getByText('මචන් මොකො වෙන්නෙ හොදින් ඉන්නවද?')).toBeVisible();
 });
 
 //Test Case: Pos_Fun_0002//
