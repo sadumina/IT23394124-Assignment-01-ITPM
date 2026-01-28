@@ -113,3 +113,14 @@ test('Neg_Fun_0009: English abbreviations and short forms ', async ({ page }) =>
 
 //actual output should be "ම්චන් mage NIC එක නති වෙල එක හඩ්ග්න්න ID office එකට යන්න ඔන."
 
+//Test Case: Neg_Fun_0010//
+test('Neg_Fun_0010: Translate a polite request', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {         
+    name: 'Input Your Singlish Text Here.'
+    });
+    await singlishInput.fill('oya mata help krnna puluwanda pls');
+    await expect(page.getByText('ඔයා මට help කරන්න පුළුවන්ද pls')).toBeVisible();
+  } );      
+
+//actual output should be "ඔය මට help ක්‍රන්න පුලුwඅන්ඩ ප්ල්ස්"
