@@ -45,3 +45,12 @@ test('Neg_Fun_0003: Translate a sentence about weather', async ({ page }) => {
 //the reason for the above test case is to validate that the translation system can handle sentences related to weather conditions and their impact on daily activities, ensuring accurate context translation.
 
 //Test Case: Neg_Fun_0004//
+
+test('Neg_Fun_0004: Translate a sentence about studying', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', { 
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('mata next week eke exam tiyenva issella prepare venna ona');
+  await expect(page.getByText('මට next week එකේ exam තියෙනවා ඉස්සෙල්ල prepare වෙන්න ඔන')).toBeVisible();
+} );
