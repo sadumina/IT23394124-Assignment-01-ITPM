@@ -46,3 +46,14 @@ test('Pos_Fun_0004: Translate a statement about going to school', async ({ page 
   await singlishInput.fill('mama kalin gedhara giyaa');
   await expect(page.getByText('මම කලින් ගෙදර ගියා')).toBeVisible();
 } );
+
+//Test Case: Pos_Fun_0005// 
+
+test('Pos_Fun_0005: Translate a polite request', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {     
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('mama heta naha mata notes tika send karanna puluvandha?');
+  await expect(page.getByText('මම හෙට naha මට notes ටික send කරන්න පුලුවන්ද?')).toBeVisible();
+} );
