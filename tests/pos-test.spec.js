@@ -228,3 +228,13 @@ test('Pos_Fun_0021: Translate a sentence with negation', async ({ page }) => {
   await singlishInput.fill('kavadhaavath dhemapiyanghe hitha ridhdhanna epaa');
   await expect(page.getByText('කවදාවත් දෙමපියන්ග්හෙ හිත රිද්දන්න එපා')).toBeVisible();
 } );
+
+//Test Case: Pos_Fun_0022//
+test('Pos_Fun_0022: Translate a sentence with negation', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com'); 
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('eyaata paadam kiyalaa dhenna epaa');
+  await expect(page.getByText('එයාට පාඩම් කියලා දෙන්න එපා')).toBeVisible();
+} );
