@@ -29,3 +29,19 @@ test('Neg_Fun_0002: Translate a polite request', async ({ page }) => {
 });
 
 //the reason for the above test case is to ensure that the translation system can accurately translate polite requests from Singlish to Sinhala, maintaining the intended tone and meaning.
+
+//Test Case: Neg_Fun_0003//
+
+
+test('Neg_Fun_0003: Translate a sentence about weather', async ({ page }) => {  
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('adha nam office yanna bh wei meheta hodatama wassa');
+  await expect(page.getByText('අඩ න්ම් office යන්න බා wඑඉ මෙහෙට හොඩටම wඅස්ස')).toBeVisible();
+} );
+
+//the reason for the above test case is to validate that the translation system can handle sentences related to weather conditions and their impact on daily activities, ensuring accurate context translation.
+
+//Test Case: Neg_Fun_0004//

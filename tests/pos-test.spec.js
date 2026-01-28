@@ -79,3 +79,8 @@ test('Pos_Fun_0007: Translate a sentence about daily routine', async ({ page }) 
   await singlishInput.fill('oyaa adha gym ekata giyadha?');
   await expect(page.getByText('ඔයා අද gym එකට ගියද?')).toBeVisible();
 } );
+
+//Test Case: Pos_Fun_0008//
+
+
+//Test Case: Pos_Fun_0009//
