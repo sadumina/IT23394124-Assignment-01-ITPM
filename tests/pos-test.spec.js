@@ -128,3 +128,11 @@ test('Pos_Fun_0011: Translate a sentence about making plans', async ({ page }) =
 
 //Test Case: Pos_Fun_0012//
 
+test('Pos_Fun_0012: Sentences containing places and common English words that should remain as they are ', async ({ page }) => {  
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {   
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('mama podi davas vala school giye sisu sariye');
+  await expect(page.getByText('මම පොඩි ඩවස් වල school ගියෙ සිසු සරියෙ')).toBeVisible();
+}  );
