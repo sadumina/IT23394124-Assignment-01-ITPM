@@ -177,3 +177,13 @@ test('Pos_Fun_0016: Tense variations(Future)', async ({ page }) => {
     await singlishInput.fill('machan mn heta udhema ground ekata yanava exercise karanna oyath enavadha?');
     await expect(page.getByText('මචන් ම්න් හෙට උදෙම ground එකට යනව exercise කරන්න ඔයත් එනවද?')).toBeVisible();
   } );
+
+//Test Case: Pos_Fun_0017//
+test('Pos_Fun_0017: Translate a  informal phrasing', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', { 
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('ado ban mata podi help ekak dhipanko');
+  await expect(page.getByText('ado බන් මට පොඩි help එකක් දිපන්කො')).toBeVisible();
+} );
