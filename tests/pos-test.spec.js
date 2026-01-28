@@ -15,3 +15,6 @@ test('Pos_Fun_0001: Translate a simple greeting question', async ({ page }) => {
  
   await expect(page.getByText('ඔයාට කොහොමද?')).toBeVisible();
 });
+
+//Test Case: Pos_Fun_0002//
+
