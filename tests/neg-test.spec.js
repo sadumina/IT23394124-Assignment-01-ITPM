@@ -14,3 +14,5 @@ test('Neg_Fun_0001: Should not return exact punctuation-sensitive translation', 
     page.getByText('සුභ උදෑසනක්!')
   ).not.toBeVisible();
 });
+
+//the reason for the above test case is to verify that the translation system does not return an incorrect translation when punctuation is altered.
