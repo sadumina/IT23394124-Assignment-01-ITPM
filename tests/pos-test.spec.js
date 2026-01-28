@@ -24,3 +24,6 @@ test('Pos_Fun_0002: Translate a common farewell phrase', async ({ page }) => {
   await expect(page.getByText('මම ගෙදර යනවා')).toBeVisible();
 });
 
+//Test Case: Pos_Fun_0003//
+
+
