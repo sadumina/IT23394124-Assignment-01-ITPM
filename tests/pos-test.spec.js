@@ -187,3 +187,13 @@ test('Pos_Fun_0017: Translate a  informal phrasing', async ({ page }) => {
   await singlishInput.fill('ado ban mata podi help ekak dhipanko');
   await expect(page.getByText('ado බන් මට පොඩි help එකක් දිපන්කො')).toBeVisible();
 } );
+
+//Test Case: Pos_Fun_0018//
+test('Pos_Fun_0018: Currency, time formats, dates, and units of measurement ', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {         
+    name: 'Input Your Singlish Text Here.'
+    });
+    await singlishInput.fill('thaaththe mata Rs.5000  dhenna puluvandha pls');
+    await expect(page.getByText('තාත්තෙ මට Rs.5000 දෙන්න පුලුවන්ද ප්ල්ස්')).toBeVisible();
+  } );
