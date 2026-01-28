@@ -76,3 +76,14 @@ test('Neg_Fun_0006: Translate a sentence about education', async ({ page }) => {
   await singlishInput.fill('hi mama Linkedin account ekak haduwa oyth hadaganna eka godk hodai');
   await expect(page.getByText('hi මම LinkedIn account එකක් හදුව ඔයත් හදගන්න එක ගොඩක් හොඳයි')).toBeVisible();
 } );
+
+//Test Case: Neg_Fun_0007//
+
+test('Neg_Fun_0007: Translate a sentence about making plans', async ({ page }) => {  
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('subma subha aluth avurudhdhak wewa');
+  await expect(page.getByText('සුභම සුභ අලුත් අවුරුද්දක් වේවා')).toBeVisible();
+}  );
