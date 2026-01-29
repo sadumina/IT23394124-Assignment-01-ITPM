@@ -90,7 +90,7 @@ test('Pos_Fun_0008: Translate a sentence about studying', async ({ page }) => {
   await singlishInput.fill('heta mata exam . oyata  exam dh ?');
   await expect(page.getByText('හෙට මට exam . ඔයට exam ද් ?')).toBeVisible();
 } );
-
+  
 
 //Test Case: Pos_Fun_0009//
 

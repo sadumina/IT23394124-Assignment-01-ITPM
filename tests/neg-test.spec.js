@@ -8,10 +8,10 @@ test('Neg_Fun_0001: Should not return exact punctuation-sensitive translation', 
     name: 'Input Your Singlish Text Here.'
   });
 
-  await singlishInput.fill('suba udhaesanak!');
+  await singlishInput.fill('subha udhaesanak!');
 
   await expect(
-    page.getByText('සුභ උදෑසනක්!')
+    page.getByText('සුභ උදෑසනක්')
   ).not.toBeVisible();
 });
 
@@ -74,7 +74,7 @@ test('Neg_Fun_0006: Translate a sentence about education', async ({ page }) => {
     name: 'Input Your Singlish Text Here.'
   });
   await singlishInput.fill('hi mama Linkedin account ekak haduwa oyth hadaganna eka godk hodai');
-  await expect(page.getByText('hi මම LinkedIn account එකක් හදුව ඔයත් හදගන්න එක ගොඩක් හොඳයි')).toBeVisible();
+  await expect(page.getByText('හි මම Linkedin account එකක් හඩුwඅ ඔය්ත් හඩගන්න එක ගොඩ්ක් හොඩෛ')).toBeVisible();
 } );
 
 //Test Case: Neg_Fun_0007//
@@ -84,8 +84,8 @@ test('Neg_Fun_0007: Translate a sentence about making plans', async ({ page }) =
   const singlishInput = page.getByRole('textbox', {
     name: 'Input Your Singlish Text Here.'
   });
-  await singlishInput.fill('subma subha aluth avurudhdhak wewa');
-  await expect(page.getByText('සුභම සුභ අලුත් අවුරුද්දක් වේවා')).toBeVisible();
+  await singlishInput.fill('subma subha aluth avurudhdhak wewa!');
+  await expect(page.getByText('සුභම සුභ අලුත් අවුරුද්දක් වේවා!')).toBeVisible();
 }  );
 
 //Test Case: Neg_Fun_0008//
@@ -124,3 +124,21 @@ test('Neg_Fun_0010: Translate a polite request', async ({ page }) => {
   } );      
 
 //actual output should be "ඔය මට help ක්‍රන්න පුලුwඅන්ඩ ප්ල්ස්"
+
+test('Neg_Fun_0011: Translate a polite request', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {         
+    name: 'Input Your Singlish Text Here.'
+    });
+    await singlishInput.fill('mama kavadavath testing karala nh playwright tool eke eth me dvas tikem practise karpu nisa dan nm noramlly terenva meke mokadha  venne kiayla .api project ekak karddi meka apit godk useful vei kiayala hitanava.');
+    await expect(page.getByText('මම කවදාවත් testing කරලා නෑ playwright tool එකේ එත් මේ දවස් ටිකෙම් practise කරපු නිසා දැන් නම් normally තෙරෙන්වා මේකේ මොකද්ද වෙන්නේ කියලා. අපි project එකක් කරද්දී මේක අපිට ගොඩක් useful වෙයි කියලා හිතනවා')).toBeVisible();
+  } );      
+
+test('Neg_Fun_0012: Should not return exact punctuation-sensitive translation', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill(' balu vada karnna epa bn');
+  await expect(page.getByText(' බලු වැඩ කරන්න එපා බං')).toBeVisible();
+} );

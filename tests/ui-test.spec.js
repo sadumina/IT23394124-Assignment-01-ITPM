@@ -10,3 +10,13 @@ test('UI_Test_001: Input feild accept text', async ({ page }) => {
 }  );
 
 //The reason for the above test case is to verify that the input field on the Swift Translator website correctly accepts and displays user-entered text in Singlish.
+
+test('UI_Test_002: Automatic translation functionality', async ({ page }) => {
+    await page.goto('https://www.swifttranslator.com');
+    const singlishInput = page.getByRole('textbox', {
+        name: 'Input Your Singlish Text Here.'
+    });
+    await singlishInput.fill('amme mata bath oni');
+    
+    await expect(page.getByText('අම්මෙ මට බත් ඔනි')).toBeVisible();
+}  );   
