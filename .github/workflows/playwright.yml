@@ -1,49 +1,97 @@
-name: Playwright UI Tests
+name: Playwright Test Suite (POS | NEG | UI)
 
 on:
   push:
-    branches:
-      - main
-      - master
+    branches: [ main, master ]
   pull_request:
-    branches:
-      - main
-      - master
+    branches: [ main, master ]
 
 jobs:
-  playwright-tests:
+  pos-tests:
+    name: Positive Test Cases
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
     steps:
-      # 1. Checkout repository
-      - name: Checkout source code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # 2. Setup Node.js (LTS)
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: lts/*
           cache: npm
 
-      # 3. Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # 4. Install Playwright browsers + system deps
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      # 5. Run Playwright tests
-      - name: Run Playwright tests
-        run: npx playwright test
+      - name: Run Positive Tests
+        run: npx playwright test tests/pos-test.spec.js
 
-      # 6. Upload Playwright HTML report
-      - name: Upload Playwright report
+      - name: Upload POS report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
+          name: pos-test-report
           path: playwright-report/
-          retention-days: 30
+
+
+  neg-tests:
+    name: Negative Test Cases
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Negative Tests
+        run: npx playwright test tests/neg-test.spec.js
+
+      - name: Upload NEG report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: neg-test-report
+          path: playwright-report/
+
+
+  ui-tests:
+    name: UI Test Cases
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run UI Tests
+        run: npx playwright test tests/ui-test.spec.js
+
+      - name: Upload UI report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-test-report
+          path: playwright-report/
