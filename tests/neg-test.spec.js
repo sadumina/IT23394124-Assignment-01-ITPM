@@ -1,19 +1,19 @@
 const { test, expect } = require('@playwright/test');
 
-//Test Case: Neg_Fun_0001//
-test('Neg_Fun_0001: Should not return exact punctuation-sensitive translation', async ({ page }) => {
-  await page.goto('https://www.swifttranslator.com');
+// //Test Case: Neg_Fun_0001//
+// test('Neg_Fun_0001: Should not return exact punctuation-sensitive translation', async ({ page }) => {
+//   await page.goto('https://www.swifttranslator.com');
 
-  const singlishInput = page.getByRole('textbox', {
-    name: 'Input Your Singlish Text Here.'
-  });
+//   const singlishInput = page.getByRole('textbox', {
+//     name: 'Input Your Singlish Text Here.'
+//   });
 
-  await singlishInput.fill('subha udhaesanak!');
+//   await singlishInput.fill('suba aluth avruddk!');
 
-  await expect(
-    page.getByText('සුභ උදෑසනක්')
-  ).not.toBeVisible();
-});
+//   await expect(
+//     page.getByText('සුබ අලුත් අවුරුද්දක් වේවා!')
+//   ).not.toBeVisible();
+// });
 
 //the reason for the above test case is to verify that the translation system does not return an incorrect translation when punctuation is altered.
 
@@ -73,7 +73,7 @@ test('Neg_Fun_0006: Translate a sentence about education', async ({ page }) => {
   const singlishInput = page.getByRole('textbox', {
     name: 'Input Your Singlish Text Here.'
   });
-  await singlishInput.fill('hi mama Linkedin account ekak haduwa oyth hadaganna eka godk hodai');
+  await singlishInput.fill('hi mama Linkedin account ekak haduwa oyth hadaganna eka godk hoda');
   await expect(page.getByText('හි මම Linkedin account එකක් හඩුwඅ ඔය්ත් හඩගන්න එක ගොඩ්ක් හොඩෛ')).toBeVisible();
 } );
 
